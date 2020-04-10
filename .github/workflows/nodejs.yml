@@ -14,7 +14,14 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
-    - name: Run linter
-      run: make lint
-      env:
-        CI: true
+      - uses: actions/checkout@v2   - name: npm install, build
+        run: |
+          make install
+          make build
+        # Add environment variables
+        env:
+          CI: true
+   
+      - name: Run linter
+        run: |
+          make lint
