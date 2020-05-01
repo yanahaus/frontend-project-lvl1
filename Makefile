@@ -7,6 +7,9 @@ start:
 start2:
 	node bin/brain-even.js
 
+start3:
+	node bin/brain-calc.js
+
 publish:
 	npm publish --dry-run
 
