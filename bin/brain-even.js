@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import readlineSync, { gameBrain, welcome } from '../src/index.js';
+import { gameBrain } from '../src/index.js';
 
-welcome();
 gameBrain();
