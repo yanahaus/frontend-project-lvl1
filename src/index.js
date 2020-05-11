@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+
 const userName = readlineSync.question('May I have your name?\n');
 
 export const welcome = () => {
@@ -11,12 +12,12 @@ export const gameBrain = () => {
   const isNumberEven = (num) => {
     if (num % 2 === 0) {
       return 'yes';
-    } else return 'no';
+    } return 'no';
   };
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3;) {
     const randomNumber = Math.floor(Math.random() * 101);
-    let userAnswer = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
+    const userAnswer = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
     if (isNumberEven(randomNumber) === userAnswer) {
       console.log('Correct!');
       i += 1;
@@ -32,7 +33,7 @@ export const gameCalc = () => {
     const randomNumber1 = Math.floor(Math.random() * 101);
     const randomNumber2 = Math.floor(Math.random() * 101);
     const arr = ['+', '-', '*'];
-    const randomOperator = arr[Math.floor(Math.random()*arr.length)];
+    const randomOperator = arr[Math.floor(Math.random() * arr.length)];
     let userAnswer = readlineSync.question(`Question: ${randomNumber1} ${randomOperator} ${randomNumber2} \n`);
     let result = 0;
     if (randomOperator === '+') {
@@ -45,7 +46,7 @@ export const gameCalc = () => {
       result = randomNumber1 * randomNumber2;
     }
     if (Number(userAnswer) === result) {
-        console.log('Correct!');
+      console.log('Correct!');
       i += 1;
     } else console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result} Lets try again, ${userName}!`);
   }
